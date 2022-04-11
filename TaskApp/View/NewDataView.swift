@@ -13,7 +13,7 @@ struct NewDataView: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Add New Task")
+                Text("\(homeData.updateItem == nil ? "Add New " : "Update ") Task")
                     .font(.system(size: 65))
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
@@ -54,7 +54,7 @@ struct NewDataView: View {
             Button(action: {homeData.writeData(context: context)}, label: {
                 Label(
                     title: {
-                        Text("Add Now")
+                        Text(homeData.updateItem == nil ? "Add Now" : "Update")
                             .font(.title)
                             .foregroundColor(.white)
                             .fontWeight(.bold)
@@ -70,7 +70,7 @@ struct NewDataView: View {
                     .frame(width: UIScreen.main.bounds.width - 30)
                     .background(
                     
-                        LinearGradient(gradient: .init(colors: [Color.orange,Color.red]), startPoint: .leading, endPoint: .trailing)
+                        LinearGradient(gradient: .init(colors: [Color.purple,Color.blue]), startPoint: .leading, endPoint: .trailing)
                     )
                     .cornerRadius(8)
             })
